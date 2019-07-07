@@ -1,0 +1,20 @@
+options:
+	P: &8« &eTroll system &8»
+	A: &eTrollmodus &3An
+	O: &eTrollmodus &cAus
+	
+	
+command /troll [<text>]:
+	permission: CB.Troll
+	permission message "{@P} &cDazu hast du keine rechte"
+	trigger:
+		if arg 1 is not set:
+			send "{@P} &cNutze bitte /Troll [An] oder [Aus] an"
+		#else if arg 1 is:
+			#send "{@P} &cNutze /troll An oder Aus"
+		else if arg 1 is not "an" or "aus":
+			send "{@P} &cNutze bitte /Troll [An] oder [Aus] an"
+		else:
+			send "&3Du hast nun den {@a}!"
+		else:
+			send "&3Du hast nun den {@o}&3!"
